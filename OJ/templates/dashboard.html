@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block title %}Dashboard{% endblock title %}
+{% block body %}
+<h1>Problems List</h1>
+<style>
+    body {
+        background-color: #E0FFFF;
+
+    }
+</style>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Difficulty</th>
+            <th>Category</th>
+
+        </tr>
+
+
+</thead>
+    <tbody>
+        {% for problem in problems %}
+        <tr>
+            <td><a href="{% url 'prob_description' problem.id %}">{{ problem.name }}</a></td>
+            <td>{{ problem.status }}</td>
+            <td>{{ problem.difficulty }}</td>
+            <td>{{ problem.category_name }}</td>
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>    
+
+
+
+
+
+
+{% endblock body %}
