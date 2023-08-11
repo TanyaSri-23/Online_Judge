@@ -210,3 +210,6 @@ def verdict(request, problem_id):
 #     else:
 #         form = CodeForm()
 #     return render(request, 'submit_code_template.html', {'form': form})
+
+def contact(request):
+    return render (request, 'contact.html')
